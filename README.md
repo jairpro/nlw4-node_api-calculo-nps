@@ -262,3 +262,34 @@ yarn add handlebars
 
 ## URL de resposta:
 http://localhost:3333/answers/${nota}?u=${user_id}
+
+
+## 💻 Cálculo do NPS:
+
+1 2 3 4 5 6 7 8 9 10
+
+Detratores => 0 - 6
+Passivos => 7 - 8
+Promotores => 9 - 10
+
+(Número de promotores - número de detratores) / (número de respondentes) x 100 = porcentagem do NPS
+
+## Validações com [YUP](https://github.com/jquense/yup)
+
+Instalação
+```shell
+yarn add yup
+```
+
+Não tem tipagem
+
+## Node
+
+```shell
+pkill node
+```
+Cancela no Linux todas as tasks com Node, mas no Windows é diferente. para Windows pode-se pesquisar na comunidade da Rocekatseat. Talvez seja *taskkill -f* , algo do tipo...
+
+## 💜 Agradecimentos:
+
+_Agradecimento especial a [Daniele Leão Evangelista](https://github.com/danileao) pela baita aula e a todos da [Rockeatseat](https://rocketseat.com.br/) pelo empenho em levar os devs ao próximo nível._
