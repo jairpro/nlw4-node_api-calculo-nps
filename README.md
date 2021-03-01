@@ -104,6 +104,8 @@ yarn add @types/uuid -D
 
 *Organize imports [ Alt+Shift+O ]* - Remove _imports_ não utilizados no código;
 
+Para selecionar todas ocorrencias da seleção [ Ctrl + Shift + L ]
+
 ## Testes Automatizados
 
 ### 1 - Testes unitários
