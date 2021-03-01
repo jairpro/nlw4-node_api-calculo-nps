@@ -1,4 +1,5 @@
 src/database/database.sqlite
+src/database/database.test.sqlite
 
 # Logs
 logs

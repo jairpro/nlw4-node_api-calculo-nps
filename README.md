@@ -103,3 +103,125 @@ yarn add @types/uuid -D
 ## ⌨ Atalhos VSCode:
 
 *Organize imports [ Alt+Shift+O ]* - Remove _imports_ não utilizados no código;
+
+## Testes Automatizados
+
+### 1 - Testes unitários
+
+  - São testes para verificar determinada funcionalidade da aplicação (Um serviço, uma função específica);
+
+  - Indicado para aplicações backend;
+
+  - Indicado para [TDD (Test Driven Development - Desenvolvimento Orientado por Testes)](https://www.techlise.com.br/blog/tudo-o-que-voce-precisa-saber-sobre-tdd/#:~:text=TDD%20%C3%A9%20a%20sigla%20para,deles%2C%20um%20teste%20%C3%A9%20aplicado.)
+
+  - Usa-se dados fake;
+
+### 2 - Testes de integração
+
+  - Aqui se testa a funcionalidade completa da aplicação;
+
+  - Indicado para aplicações backend;
+
+  - Exemplo, supondo que vamos testar a criação de um usuário. Para isso vamos considerar o fluxo:
+
+  ```
+  -> request -> routes -> controller -> repository
+  <- repository <- controller <- response
+  ```
+
+  - É o que vamos estudar nessa aula;
+
+### 3 - Teste Ponta a Ponta ((E2E - End to End)[https://blog.cedrotech.com/teste-end-to-end/#:~:text=O%20teste%20end%2Dto%2Dend,projeto%20do%20in%C3%ADcio%20ao%20fim.&text=Resumindo%2C%20o%20teste%20end%2Dto,completa%20simulando%20o%20ambiente%20real.])
+
+  - Aqui se testa toda a ação do usuário na aplicação;
+
+  - É mais utilizado para aplicações front-end;
+
+  - Exemplo, supondo um frontend com um formulário com nome e email, se testa:
+
+    1) Usuário digitou os dados no campo;
+
+    2) Usuário clicou em cadastrar;
+
+    3) Usuário esperou a página recarregar (ou alguma coisa...);
+
+Existem também testes onde um time de (QA - (Quality Assurance - Garantia de Qualidade))[https://blog.cedrotech.com/o-qa-dentro-de-um-time-agil-scrum/#:~:text=QA%2C%20do%20ingl%C3%AAs%20Quality%20Assurance,entregue%20com%20a%20qualidade%20esperada.&text=Scrum%20Master%3B,Time%20de%20Desenvolvimento.] utiliza um abiente de desenvolvimento, um ambiente de testes, salvando na aplicação, fazendo acesso ao banco de dados, etc, de uma forma um pouco mais real. Nesse tipo de teste há interação humana de estar criando os cenários. Diferente dos tipos de testes anteriores onde se faz rodando um comando.
+
+## 🛠 Ferramentas de Testes:
+
+  ### Jest
+
+  - (Documentação)[https://jestjs.io/docs/en/getting-started];
+
+  - Instalação:
+  ```shell
+  yarn add jest @types/jest ts-jest -D
+  ```
+
+  - Criando arquivo de configuração:
+  ```shell
+  yarn jest --init
+  ```
+  1) Responder *yes* para definir um script de teste em _package.json_;
+
+  2) Responder *yes* para utilizar Typescript;
+
+  3) Responder *node* como ambiente;
+
+  4) Podemos responder *no* para _coverage report_ (que mostra pontos importantes na aplicação onde podemos cobrir de testes, como blocos _try catch_)
+
+  5) Responder *v8*;
+
+  6) Responder *yes* para limpar as chamadas entre cada teste;
+
+
+  - Em *jest.config.ts* configurar:
+
+  ```ts
+  bail: true, // para interromper a sequência de testes caso um teste falhar
+
+  // testEnvironment: "node",  // vamos deixar desabiliatdo
+
+  testMatch: ["**/__tests__/*.test.ts"], // habilitar para especicar o caminho dos nossos testes, que podem estar em várias pastas
+
+  preset: "ts-jest",
+  ```
+
+  - Estrutura do arquivo de teste:
+  (...)
+
+  - Rodando os testes:
+  ```shell
+  yarn test
+  ```
+
+  ## Supertest
+  
+  O (Supertest)[https://www.npmjs.com/package/supertest] é uma ferramenta para testes de integração.
+
+  Instalação:
+  ```shell
+  yarn add supertest @types/supertest -D
+  ```
+
+  ### Variáveis de ambiente no Windows
+  
+  (How can I set NODE_ENV=production on Windows?)[https://stackoverflow.com/questions/9249830/how-can-i-set-node-env-production-on-windows]
+
+  - Scripts para Windows:
+  
+  ```json
+  {"scripts": {
+    "test": "set NODE_ENV=test&&jest",
+    "posttest": "del \".\\src\\database\\database.test.sqlite\"",
+  }}
+  ```
+
+- Scripts para Linux:
+  
+  ```json
+  {"scripts": {
+    "test": "NODE_ENV=test jest",
+    "posttest": "rm ./src/database/database.test.sqlite"
+  }}
+  ```
