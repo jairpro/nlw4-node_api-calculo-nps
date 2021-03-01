@@ -131,7 +131,7 @@ yarn add @types/uuid -D
 
   - É o que vamos estudar nessa aula;
 
-### 3 - Teste Ponta a Ponta ((E2E - End to End)[https://blog.cedrotech.com/teste-end-to-end/#:~:text=O%20teste%20end%2Dto%2Dend,projeto%20do%20in%C3%ADcio%20ao%20fim.&text=Resumindo%2C%20o%20teste%20end%2Dto,completa%20simulando%20o%20ambiente%20real.])
+### 3 - Teste Ponta a Ponta ([E2E - End to End](https://blog.cedrotech.com/teste-end-to-end/#:~:text=O%20teste%20end%2Dto%2Dend,projeto%20do%20in%C3%ADcio%20ao%20fim.&text=Resumindo%2C%20o%20teste%20end%2Dto,completa%20simulando%20o%20ambiente%20real.))
 
   - Aqui se testa toda a ação do usuário na aplicação;
 
@@ -145,13 +145,13 @@ yarn add @types/uuid -D
 
     3) Usuário esperou a página recarregar (ou alguma coisa...);
 
-Existem também testes onde um time de (QA - (Quality Assurance - Garantia de Qualidade))[https://blog.cedrotech.com/o-qa-dentro-de-um-time-agil-scrum/#:~:text=QA%2C%20do%20ingl%C3%AAs%20Quality%20Assurance,entregue%20com%20a%20qualidade%20esperada.&text=Scrum%20Master%3B,Time%20de%20Desenvolvimento.] utiliza um abiente de desenvolvimento, um ambiente de testes, salvando na aplicação, fazendo acesso ao banco de dados, etc, de uma forma um pouco mais real. Nesse tipo de teste há interação humana de estar criando os cenários. Diferente dos tipos de testes anteriores onde se faz rodando um comando.
+Existem também testes onde um time de [QA - (Quality Assurance - Garantia de Qualidade)](https://blog.cedrotech.com/o-qa-dentro-de-um-time-agil-scrum/#:~:text=QA%2C%20do%20ingl%C3%AAs%20Quality%20Assurance,entregue%20com%20a%20qualidade%20esperada.&text=Scrum%20Master%3B,Time%20de%20Desenvolvimento.)utiliza um abiente de desenvolvimento, um ambiente de testes, salvando na aplicação, fazendo acesso ao banco de dados, etc, de uma forma um pouco mais real. Nesse tipo de teste há interação humana de estar criando os cenários. Diferente dos tipos de testes anteriores onde se faz rodando um comando.
 
 ## 🛠 Ferramentas de Testes:
 
   ### Jest
 
-  - (Documentação)[https://jestjs.io/docs/en/getting-started];
+  - [Documentação](https://jestjs.io/docs/en/getting-started);
 
   - Instalação:
   ```shell
@@ -197,7 +197,7 @@ Existem também testes onde um time de (QA - (Quality Assurance - Garantia de Qu
 
   ## Supertest
   
-  O (Supertest)[https://www.npmjs.com/package/supertest] é uma ferramenta para testes de integração.
+  O [Supertest](https://www.npmjs.com/package/supertest) é uma ferramenta para testes de integração.
 
   Instalação:
   ```shell
@@ -206,7 +206,7 @@ Existem também testes onde um time de (QA - (Quality Assurance - Garantia de Qu
 
   ### Variáveis de ambiente no Windows
   
-  (How can I set NODE_ENV=production on Windows?)[https://stackoverflow.com/questions/9249830/how-can-i-set-node-env-production-on-windows]
+  [How can I set NODE_ENV=production on Windows?](https://stackoverflow.com/questions/9249830/how-can-i-set-node-env-production-on-windows)
 
   - Scripts para Windows:
   
