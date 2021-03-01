@@ -225,3 +225,38 @@ Existem também testes onde um time de (QA - (Quality Assurance - Garantia de Qu
     "posttest": "rm ./src/database/database.test.sqlite"
   }}
   ```
+
+
+## SurveysUsers
+
+Migration de criação da tabela:
+```shell
+yarn typeorm migration:create -n CreateSurveysUsers
+```
+
+## Envio de email
+
+[Nodemailer](https://nodemailer.com/about/)
+
+Serviço SMTP fake: 
+[Ethereal](https://ethereal.email/)
+
+Instalação:
+```shell
+yarn add nodemailer
+```
+```shell
+yarn add @types/nodemailer -D
+```
+
+## Template Customizável
+
+[Handlebars](https://handlebarsjs.com/)
+
+Instalação:
+```shell
+yarn add handlebars
+```
+
+## URL de resposta:
+http://localhost:3333/answers/${nota}?u=${user_id}
